@@ -1,0 +1,12 @@
+file "%ProgramFiles%\JetBrains\WebStorm 11.0.1\bin\WebStorm.exe"
+    sha1        eq      "8203085e1bb7c7659db7f1a25510b7dbd18c9079"
+    md5         eq      "b6a6a7b7944c3f6b75a83eb965f1b0bc"
+    crc         has     "03dc8324"
+    size        eq      "902928"
+    ver         gt      "11.0.1.0"
+    prodver     in      "11.0.1.WS-143.382.36"
+    prodname    ends    "WebStorm"
+    orig        starts  "webstorm.exe"
+
+entry "HKLM\Key\Value"
+    value       expand  "Xpto"

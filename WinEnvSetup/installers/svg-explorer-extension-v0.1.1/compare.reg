@@ -1,0 +1,27 @@
+REGEDIT4
+[HKEY_LOCAL_MACHINE\software\Classes\.SVG\shellex\{E357FCCD-A995-4576-B01F-234630154E96}]
+@="{4CA20D9A-98AC-4DD6-9C16-7449F29AC08A}"
+[HKEY_LOCAL_MACHINE\software\Classes\CLSID\{4CA20D9A-98AC-4DD6-9C16-7449F29AC08A}]
+@="Sample Thumbnail Provider"
+[HKEY_LOCAL_MACHINE\software\Classes\CLSID\{4CA20D9A-98AC-4DD6-9C16-7449F29AC08A}\InprocServer32]
+@="C:\\Program Files\\Dotz Softwares\\SVG Explorer Extension\\SVGThumbnailExtension.dll"
+"ThreadingModel"="Apartment"
+[HKEY_LOCAL_MACHINE\software\microsoft\Windows\CurrentVersion\Uninstall\{4CA20D9A-98AC-4DD6-9C16-7449F29AC08A}_is1]
+"Inno Setup: Setup Version"="5.4.3 (a)"
+"Inno Setup: App Path"="C:\\Program Files\\Dotz Softwares\\SVG Explorer Extension"
+"InstallLocation"="C:\\Program Files\\Dotz Softwares\\SVG Explorer Extension\\"
+"Inno Setup: Icon Group"="SVG Explorer Extension"
+"Inno Setup: Language"="en"
+"DisplayName"="SVG Explorer Extension 0.1.1"
+"UninstallString"="\"C:\\Program Files\\Dotz Softwares\\SVG Explorer Extension\\unins001.exe\""
+"QuietUninstallString"="\"C:\\Program Files\\Dotz Softwares\\SVG Explorer Extension\\unins001.exe\" /SILENT"
+"DisplayVersion"="0.1.1"
+"Publisher"="Dotz Softwares"
+"URLInfoAbout"="http://www.dotzdev.com/"
+"HelpLink"="http://www.dotzdev.com/"
+"URLUpdateInfo"="http://www.dotzdev.com/"
+"NoModify"=dword:00000001
+"NoRepair"=dword:00000001
+"MajorVersion"=dword:00000000
+"MinorVersion"=dword:00000001
+"EstimatedSize"=dword:00003B7B

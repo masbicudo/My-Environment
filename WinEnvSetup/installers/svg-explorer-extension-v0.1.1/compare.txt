@@ -1,0 +1,11 @@
+6ae9171a6c9e07ca2af5630c331a76fa %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\license\license.txt
+fdb2f626d9950a074c6b8e7c39425e6e %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\license\Qt.txt
+caed4a65caf1ef80aa81e9b135326658 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\msvcp100.dll
+aed6d63cfa5a3ef7021af9c457fee994 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\msvcr100.dll
+e1c22453c0990a1a16ae187108e3db82 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\QtCore4.dll
+ea58b9c521c098c98b02f2fb936fbcd7 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\QtGui4.dll
+850fac39c8f3d954bdf32df4a25721a5 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\QtSvg4.dll
+1b403d2232e6c12fb0955b2632cad598 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\SVGThumbnailExtension.dll
+d41d8cd98f00b204e9800998ecf8427e %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\unins000.dat
+d41d8cd98f00b204e9800998ecf8427e %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\unins000.exe
+6e68aa32608dc7c1bd820becd9478f99 %ProgramFiles%\Dotz Softwares\SVG Explorer Extension\unins001.exe

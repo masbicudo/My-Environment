@@ -1,0 +1,7 @@
+IGNORE:html
+
+URL:http://nodejs.org/dist/latest/win-x86/node.exe
+FILE-EXPAND:%temp%\WindowsInit\node.exe
+
+URL:http://nodejs.org/dist/npm/npm-1.4.9.zip
+FILE-EXPAND:%temp%\WindowsInit\npm-1.4.9.zip
