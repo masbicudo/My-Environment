@@ -24,9 +24,9 @@ SET LINK_TARGET=when creating a shortcut    e.g. %ProgramFiles%\App Dir\Name.exe
 SET UNINST=command to uninstall             e.g. %ProgramFiles%\App Dir\Uninstall.exe
 SET UNINST_ARGS=command to uninstall        e.g. /silent ==or== /q
 
-SET __ARG0=%1
 IF "%1"=="" GOTO :ALL
-IF "%__ARG0:~0,1%"==":" ( SHIFT & GOTO %1 ) >nul 2>nul
+echo %1 | findstr /b : >nul 2>nul && ( SHIFT & GOTO %1 ) >nul 2>nul
+
 :ALL
     CALL :DOWNLOAD %*
     CALL :INSTALL  %*
