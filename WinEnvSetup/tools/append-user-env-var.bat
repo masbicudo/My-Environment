@@ -10,12 +10,12 @@
 
 :: checking whether value already exists in the registry environment variable
     CALL env-var-item-exists __REGISTRY_VAR %2 && (
-        ECHO.USER: %1: already added %~2
+        ECHO.USER %1 already contains %~2
         GOTO :eof
     )
 
 :: appending the desired value and saving
-    ECHO.USER: %1: adding %~2
+    ECHO.USER %1 += %~2
     CALL env-var-insert-item __REGISTRY_VAR %2
     REM IF __REGISTRY_VAR ENDS WITH "\", MUST DOUBLE IT (e.g. "\\")
     IF "%__REGISTRY_VAR:~-1%"=="\" (
