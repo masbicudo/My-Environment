@@ -13,6 +13,8 @@ CALL append-user-env-var   PATH "%DESKTOPDIR%\Shortcuts"
 CALL append-user-env-var   SHORTCUTS "%DESKTOPDIR%\Shortcuts"
 CALL append-user-env-var   PROJECTS "C:\Projetos"
 CALL append-user-env-var   PATH "%PROJECTS%\CMD-scripts"
-CALL append-user-env-var   CLASSPATH "C:\Programas\JavaApps"
+CALL append-user-env-var   PATH "C:\Programas\JavaApps"
+CALL append-user-env-var   CLASSPATH "."
+CALL append-user-env-var   CLASSPATH "C:\Programas\JavaApps\antlr4-complete.jar"
 
 SET __CURDIR83=
