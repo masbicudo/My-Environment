@@ -1,0 +1,1 @@
+schtasks /create /tn "start gridmove on login" /xml startup-task.xml
