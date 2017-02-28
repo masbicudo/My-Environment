@@ -1,17 +1,16 @@
-VBSLoadRunTime
 Set test = VBImport("tester.vbs")
 
 test.DoTest 1, 1
 
-''' IMPORT RUNTIME.VBS - MINIFIED VERSION - v1.0.0 '''
+''' IMPORT.VBS - MINIFIED VERSION - v3.0.0 '''
 ' Author: Miguel Angelo Santos Bicudo
-Sub VBSLoadRunTime():Set W=WScript:F="RunTime.vbs":Set M=W.CreateObject("Scripting.FileSystemObject")
-A=Array("","modules\"):G=M.BuildPath(CreateObject("WScript.Shell").ExpandEnvironmentStrings("%WSRTGLB%"),".")&"\"
-J=M.BuildPath(M.GetParentFolderName(W.ScriptFullName),".")&"\":P=""
-For Z=0 To 99:V=0:If Z=0 And InStr(G,":\")>0 Then V=1
-For Y=0 To V:Q=J&P:If Y=1 Then Q=G
-For X=0 To 1:N=Q&A(X)&F:If M.FileExists(N) Then:Set S=M.OpenTextFile(N,1):ExecuteGlobal S.ReadAll():S.Close:Exit Sub
-Next:Next:B=M.GetAbsolutePathName(J&P&F):P="..\"&P
-If InStr(B,"\")=InstrRev(B,"\")Then Exit For
-Next:Err.Raise -10937, "VBSLoadRunTime", "Cannot find "&F:End Sub
-''' END IMPORT RUNTIME.VBS '''
+Dim VBImport_Items:Function VBImport(F):A="Scripting."
+If Not IsObject(VBImport_Items)Then Set I=CreateObject(A&"Dictionary"):Set VBImport_Items=I
+Set W=WScript:Set M=W.CreateObject(A&"FileSystemObject"):Set I=VBImport_Items
+If InStr(F,":\")>0Then N=F:B=F Else B=M.GetParentFolderName(W.ScriptFullName):N=M.GetAbsolutePathName(M.BuildPath(B,F))
+If ubound(split(F,"..\"))=ubound(split(B,"\"))+1Then Err.Raise -10937, "VBImport", "Cannot find "&M.GetFileName(F)
+If I.Exists(N)Then Set R=I.Item(N)Else If M.FileExists(N)Then Set S=M.OpenTextFile(N,1):Set R=E_ImpVb(S.ReadAll()):_
+  S.Close()Else If InStr(N,"\")<>InstrRev(N,"\")Then Set R=VBImport(M.BuildPath("..",F)) Else Set R=Nothing
+If Not I.Exists(N)Then I.Add N,R
+Set VBImport=R:End Function:Function E_ImpVb(D):Set Export=Nothing:Execute D:Set E_ImpVb=Export:End Function
+''' END IMPORT.VBS '''
