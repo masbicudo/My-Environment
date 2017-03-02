@@ -17,4 +17,8 @@ CALL append-user-env-var   PATH "C:\Programas\JavaApps"
 CALL append-user-env-var   CLASSPATH "."
 CALL append-user-env-var   CLASSPATH "C:\Programas\JavaApps\antlr4-complete.jar"
 
+CALL append-user-env-var   PATH "C:\Programas\GnuWin32\bin"
+CALL append-user-env-var   PATH "C:\Programas\UnxUtils\usr\local\wbin"
+CALL append-user-env-var   PATH "C:\Programas\UnxUtils\bin"
+
 SET __CURDIR83=
