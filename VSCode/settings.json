@@ -1,0 +1,8 @@
+{
+    "typescript.check.tscVersion": false,
+    "window.zoomLevel": 0,
+    "python.pythonPath": "python",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.dragAndDrop": true,
+    "editor.minimap.enabled": true
+  }
