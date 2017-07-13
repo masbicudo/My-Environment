@@ -1,4 +1,6 @@
 @echo off
+SETLOCAL
+
 :: getting registry environment variable value
     SET __REGISTRY_VAR=
     FOR /F "usebackq tokens=2,* skip=2" %%L IN (
@@ -10,12 +12,12 @@
 
 :: checking whether value exists in the registry environment variable
     CALL env-var-item-exists __REGISTRY_VAR %2 || (
-        ECHO.USER %1 does not contain %~2
+        ECHO.\033[90mUSER\033[0m \033[35m%1 does not contain %~2\033[0m | cmdcolor
         GOTO :eof
     )
 
 :: removing the desired value and saving
-    ECHO.USER %1 -= %~2
+    ECHO.\033[90mUSER\033[0m \033[94m%1 -= %~2\033[0m | cmdcolor
     CALL env-var-remove-item __REGISTRY_VAR %2
     REM IF __REGISTRY_VAR ENDS WITH "\", MUST DOUBLE IT (e.g. "\\")
     IF "%__REGISTRY_VAR:~-1%"=="\" (
@@ -24,8 +26,7 @@
         SETX %1 "%__REGISTRY_VAR%" > nul
     )
 
-:: cleanup
-    SET __REGISTRY_VAR=
+ENDLOCAL
 
 :: checking whether value exists in the local environment variable and removing
     CALL env-var-item-exists %1 %2 && CALL env-var-remove-item %1 %2

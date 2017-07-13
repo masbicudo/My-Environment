@@ -13,6 +13,7 @@ GOTO :eof
 CALL SET __COPY=%%%1%%
 CALL SET __COPY_REM=%%%1%%
 CALL env-var-remove-item __COPY_REM %2
+
 IF "%__COPY%"=="%__COPY_REM%" (
     SET __COPY=
     SET __COPY_REM=
