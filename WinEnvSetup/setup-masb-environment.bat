@@ -19,6 +19,7 @@ CALL append-user-env-var   PATH "%PROJECTS%\CMD-scripts"  --if-exist
 
 CALL append-user-env-var   PROGRAMS "C:\Programas" --if-exist
 CALL append-user-env-var   PROGRAMS "C:\Programs" --if-exist
+CALL append-user-env-var   PATH "%PROGRAMS%" --if-exist
 CALL append-user-env-var   PATH "%PROGRAMS%\JavaApps" --if-exist
 CALL append-user-env-var   CLASSPATH "."
 CALL append-user-env-var   CLASSPATH "%PROGRAMS%\JavaApps\antlr4-complete.jar" --if-exist

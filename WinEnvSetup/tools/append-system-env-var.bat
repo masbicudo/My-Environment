@@ -30,16 +30,15 @@ SETLOCAL
         CALL SETX %1 "%%__REGISTRY_VAR%%" /M > nul
     )
 
-    GOTO :END
-
-:NOT_FOUND_PATH
-    ECHO.\033[90mSYSTEM\033[0m \033[91m%1 rejected %~2 (not found)\033[0m
-
-:END
 ENDLOCAL
 
 :: checking whether value already exists in the local environment variable and adding
     CALL env-var-item-exists %1 %2 || CALL env-var-insert-item %1 %2
+
+    GOTO :EOF
+
+:NOT_FOUND_PATH
+    ECHO.\033[90mSYSTEM\033[0m \033[91m%1 rejected %~2 (not found)\033[0m
 
 :: NOTES
 :: -----

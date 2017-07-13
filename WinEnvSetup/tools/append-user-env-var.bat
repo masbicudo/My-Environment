@@ -1,6 +1,6 @@
 @ECHO off
 SETLOCAL
-
+ECHO.%2
 :: testing whether path exists
     IF "%3"=="--if-exist" SET __EXIST_079852=1
     IF "%__EXIST_079852%"=="1" IF NOT EXIST %2 GOTO :NOT_FOUND_PATH
@@ -30,16 +30,15 @@ SETLOCAL
         CALL SETX %1 "%%__REGISTRY_VAR%%" > nul
     )
 
-    GOTO :END
-
-:NOT_FOUND_PATH
-    ECHO.\033[90mUSER\033[0m \033[91m%1 rejected %~2 (not found)\033[0m | cmdcolor
-
-:END
 ENDLOCAL
 
 :: checking whether value already exists in the local environment variable and adding
     CALL env-var-item-exists %1 %2 || CALL env-var-insert-item %1 %2
+
+    GOTO :EOF
+
+:NOT_FOUND_PATH
+    ECHO.\033[90mUSER\033[0m \033[91m%1 rejected %~2 (not found)\033[0m | cmdcolor
 
 :: NOTES
 :: -----
