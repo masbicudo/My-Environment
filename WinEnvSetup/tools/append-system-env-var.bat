@@ -1,4 +1,10 @@
 @echo off
+SETLOCAL
+
+:: testing whether path exists
+    IF "%3"=="--if-exist" SET __EXIST_079851=1
+    IF "%__EXIST_079851%"=="1" IF NOT EXIST %2 GOTO :NOT_FOUND_PATH
+
 :: getting registry environment variable value
     SET __REGISTRY_VAR=
     FOR /F "usebackq tokens=2,* skip=2" %%L IN (
@@ -9,13 +15,13 @@
     :UNDEF
 
 :: checking whether value already exists in the registry environment variable
-    CALL env-var-item-exists __REGISTRY_VAR %2 || GOTO :NOT_FOUND
-        ECHO.SYSTEM %1 already contains %~2
+    CALL env-var-item-exists __REGISTRY_VAR %2 || GOTO :NOT_FOUND_REG
+        ECHO.\033[90mSYSTEM\033[0m \033[36m%1 already contains %~2\033[0m | cmdcolor
         GOTO :eof
-    :NOT_FOUND
+    :NOT_FOUND_REG
 
 :: appending the desired value and saving
-    ECHO.SYSTEM %1 += %~2
+    ECHO.\033[90mSYSTEM\033[0m \033[32m%1 += %~2\033[0m | cmdcolor
     CALL env-var-insert-item __REGISTRY_VAR %2
     REM IF __REGISTRY_VAR ENDS WITH "\", MUST DOUBLE IT (e.g. "\\")
     IF "%__REGISTRY_VAR:~-1%"=="\" (
@@ -24,11 +30,15 @@
         CALL SETX %1 "%%__REGISTRY_VAR%%" /M > nul
     )
 
-:: cleanup
-    SET __REGISTRY_VAR=
+ENDLOCAL
 
 :: checking whether value already exists in the local environment variable and adding
     CALL env-var-item-exists %1 %2 || CALL env-var-insert-item %1 %2
+
+    GOTO :EOF
+
+:NOT_FOUND_PATH
+    ECHO.\033[90mSYSTEM\033[0m \033[91m%1 rejected %~2 (not found)\033[0m
 
 :: NOTES
 :: -----
